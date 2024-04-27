@@ -1,7 +1,7 @@
 let addCardBtn = document.getElementById('addCard');
 
 let todoContiner = document.getElementById('todo');
-let progress =document.getElementById('progress')
+
 addCardBtn.addEventListener("click", ()=>{
     let superCard = document.createElement("div")
     superCard.style.backgroundColor = "red"
@@ -10,6 +10,8 @@ addCardBtn.addEventListener("click", ()=>{
      card.innerText = "Test Card"
      // lets make this card editable: 
      card.setAttribute("contenteditable", "true")
+     // lets make card draggable.(contenteditabale and draggable these are the attributes to built)
+     card.setAttribute("draggable", "true")
         superCard.append(card)//to get added at last
      
 
@@ -75,3 +77,15 @@ addCardBtn.addEventListener("click", ()=>{
 //           console.log(card)
 //       }
 // }
+
+
+//dragstart event
+//dragend event
+ card.addEventListener("dragstart", ()=>{
+     card.style.opacity = "0.2"
+     
+ card.addEventListener("dragend", ()=>{
+     card.style.opacity ="1.0"
+ })
+
+ })
